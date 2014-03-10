@@ -132,23 +132,30 @@ this repository contains the full copyright notices and license terms. -->
             <field name="name">shipment_in_return_form</field>
         </record>
 
-        <record model="ir.action.report" id="report_package_label">
+        <record model="ir.action.report" id="report_output_package_label">
             <field name="name">Package Labels</field>
-            <field name="report_name">stock.package.label</field>
+            <field name="model">stock.shipment.out</field>
+            <field name="report_name">stock.output.package.label</field>
             <field name="report">stock_package/label.odt</field>
         </record>
         <record model="ir.action.keyword"
             id="report_package_label_shipment_out_keyword">
             <field name="keyword">form_print</field>
             <field name="model">stock.shipment.out,-1</field>
-            <field name="action" ref="report_package_label"/>
+            <field name="action" ref="report_output_package_label"/>
         </record>
 
+        <record model="ir.action.report" id="report_in_return_package_label">
+            <field name="name">Package Labels</field>
+            <field name="model">stock.shipment.in.return</field>
+            <field name="report_name">stock.out_return.package.label</field>
+            <field name="report">stock_package/label.odt</field>
+        </record>
         <record model="ir.action.keyword"
             id="report_package_label_shipment_in_return_keyword">
             <field name="keyword">form_print</field>
             <field name="model">stock.shipment.in.return,-1</field>
-            <field name="action" ref="report_package_label"/>
+            <field name="action" ref="report_in_return_package_label"/>
         </record>
 
     </data>
